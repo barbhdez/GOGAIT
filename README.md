@@ -7,6 +7,11 @@ Wearable gait-analysis system based on instrumented insoles with plastic optical
 ![Bluetooth Low Energy](https://img.shields.io/badge/BLE-Bluetooth%20Low%20Energy-0082FC?style=flat&logo=bluetooth&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-Auth-FFCA28?style=flat&logo=firebase&logoColor=black)
 ![Seeed XIAO nRF52840](https://img.shields.io/badge/MCU-XIAO%20nRF52840-black?style=flat)
+![Arduino](https://img.shields.io/badge/Arduino-00878F?style=flat&logo=arduino&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=flat&logo=cplusplus&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white)
+![OpenStreetMap](https://img.shields.io/badge/OpenStreetMap-7EBC6F?style=flat&logo=openstreetmap&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white)
 
 <p align="center">
   <img src="docs/screenshots_en/home_en.png" width="260" alt="Home screen">
@@ -125,8 +130,26 @@ The instrumented insoles transmit over BLE to the mobile client, which handles a
 
 ## Project structure
 
-- `lib/main.dart` — Flutter app: UI, business logic, and local persistence.
-- `firmware/` — firmware for the microcontrollers (Seeed Studio XIAO nRF52840) on each insole.
+```
+lib/
+├── main.dart          # entry point: imports, app setup and routing
+├── core/              # theme (colors, gradients, transitions) and BLE IDs per insole
+├── i18n/              # translations (EN, ES, FR, DE, IT, PT)
+├── models/            # Usuario, SesionActividad
+├── logic/             # biomechanical metrics (balance, impact, fatigue, strike index...)
+├── services/          # BLE connection + calibration, local persistence (SharedPreferences)
+├── utils/             # date helpers and form validators
+├── widgets/           # shared widgets, foot heatmap, GPS route map
+└── screens/           # one file per screen (login, home, live activity, history...)
+firmware/
+├── GOGAIT_XIAO_DERECHA/     # Arduino sketch, right insole
+└── GOGAIT_XIAO_IZQUIERDA/   # Arduino sketch, left insole
+docs/                  # diagrams, results and screenshots used in this README
+```
+
+The files under `lib/` are Dart `part`s of `main.dart`, so they share the same library scope.
+
+The firmware for each Seeed Studio XIAO nRF52840 is written in Arduino (C++) with the Adafruit Bluefruit nRF52 library, and the UI was designed in Figma.
 
 ## Requirements
 

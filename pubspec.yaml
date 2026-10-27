@@ -1,5 +1,5 @@
 name: plantilla_tfg
-description: "Simulador Biomecanico"
+description: "GOGAIT - gait analysis app for smart optical fiber insoles"
 publish_to: 'none'
 version: 1.0.0+1
 
