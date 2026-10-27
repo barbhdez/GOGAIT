@@ -70,7 +70,7 @@ The instrumented insoles transmit over BLE to the mobile client, which handles a
 <p align="center"><i>Real wiring between the LED, photodiode, resistors, op-amp and the XIAO board.</i></p>
 
 <p align="center">
-  <img src="docs/diagrama-firmware_v4.png" width="700" alt="Firmware flow diagram: setup and loop">
+  <img src="docs/diagrama-firmware.png" width="700" alt="Firmware flow diagram: setup and loop">
 </p>
 <p align="center"><i>Firmware structure: <code>setup()</code> initializes BLE and the sensor pins once; <code>loop()</code> samples the ADC every 10 ms and pushes the reading over BLE.</i></p>
 
@@ -92,12 +92,12 @@ The instrumented insoles transmit over BLE to the mobile client, which handles a
 <p align="center"><i>The app detects Heel Strike, Midstance, Propulsion and Swing purely in software, by comparing the pressure signal against a contact threshold and its trend, with no extra sensors.</i></p>
 
 <p align="center">
-  <img src="docs/diagrama-navegacion-pantallas_v2.png" width="650" alt="Screen navigation flow of the mobile app">
+  <img src="docs/diagrama-navegacion-pantallas.png" width="650" alt="Screen navigation flow of the mobile app">
 </p>
 <p align="center"><i>How a user moves through the app: connect the insoles over BLE, calibrate both feet, run the activity with the live heatmap, and review it afterward from the session summary or the history.</i></p>
 
 <p align="center">
-  <img src="docs/diagrama-maquina-estados-calibracion_v2.png" width="500" alt="Calibration state machine for walking and running/trekking">
+  <img src="docs/diagrama-maquina-estados-calibracion.png" width="500" alt="Calibration state machine for walking and running/trekking">
 </p>
 <p align="center"><i>Guided calibration sequence, with a shorter 4-step path for walking and a longer 7-step path for running/trekking, repeated for each foot.</i></p>
 
@@ -112,7 +112,7 @@ The instrumented insoles transmit over BLE to the mobile client, which handles a
 <p align="center"><i>Local data model: a user owns a calibration per foot and a history of activity sessions; the BLE connection state is kept separately and never persisted. Everything is namespaced by email in <code>SharedPreferences</code>, so several accounts can share the same device.</i></p>
 
 <p align="center">
-  <img src="docs/diagrama-casos-de-uso_v2.png" width="700" alt="Use case diagram of the system">
+  <img src="docs/diagrama-casos-de-uso.png" width="700" alt="Use case diagram of the system">
 </p>
 <p align="center"><i>What a user can do with GOGAIT: register, pair the insoles, calibrate, run an activity, review the session history, and manage their profile.</i></p>
 
@@ -124,7 +124,7 @@ The instrumented insoles transmit over BLE to the mobile client, which handles a
 <p align="center"><i>Phase detection running on a real recorded trace (session S7, first 12 s): Swing lines up with the pressure valleys, and Heel Strike marks the sharp rise at the start of each peak.</i></p>
 
 <p align="center">
-  <img src="docs/resultado-mapa-calor-promedio_v3.png" width="600" alt="Averaged plantar pressure heatmap across 5 validated sessions">
+  <img src="docs/resultado-mapa-calor-promedio.png" width="600" alt="Averaged plantar pressure heatmap across 5 validated sessions">
 </p>
 <p align="center"><i>Heatmap averaged over the 5 validated sessions (same color scale as the app), showing a consistent forefoot-dominant loading pattern in both feet.</i></p>
 
