@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "plantilla_tfg",
+            "name": "GOGAIT",
             "request": "launch",
             "type": "dart"
         }
